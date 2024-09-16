@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Qamar Estate Agency</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/QamarWeb.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="SharedNavvyBar">
+            <div style="color: grey;" class="taskbar">
+                <img class="LogoImg" src="~/images/Logo.png" alt="Qamar Estate Agency"  />
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Qamar Estate Agency</a>
+
+                <button class="dropdown-button"><img class="BurgerBarImg" src="~/images/BurgerBar.png"></button>
+                    <div class="dropdown-content">
+                        <a asp-page="#">Advanced Property Search</a>
+                        <a asp-page="/CR/Index">Renting Commercial Property</a>
+                        <a asp-page="/CS/Index">Buying Commercial Property</a>
+                        <a asp-page="/RR/Index">Renting Residential Property</a>
+                        <a asp-page="/RS/Index">Buying Residential Property</a>
+                        <a asp-page="/LFS/Index">Land For Sale</a>
+                        <a asp-page="#">Repayment Calculator</a>
+                        <a asp-page="/Privacy">Contact Us</a>
+                    </div>
+            </div>
+            
+          
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - QamarWeb - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

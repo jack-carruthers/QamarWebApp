@@ -1,0 +1,26 @@
+@page
+@model QamarWeb.Pages_CR.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div class="cr-container">
+    @foreach (var item in Model.CommercialRentals)
+    {
+        <div class="image-card">
+            <div class = "image-container" style="background-color: white; border-radius: 15px; padding: 10px; display: inline-block;">
+                <img src="@item.Iid" alt="Image" class="cr-image" style="width: 300px; height: 300px; object-fit: contain; border-radius: 10px;"/>
+            </div>
+            <div class="cr-info">
+                <p>@Html.DisplayFor(modelItem => item.Address)</p>
+                <h2>@Html.DisplayFor(modelItem => item.DateOfList)</h2>
+                <p>Area: @Html.DisplayFor(modelItem => item.Area)</p>
+                <p>Grade: @Html.DisplayFor(modelItem => item.Description)</p>
+                <h2>£ @String.Format("{0:N0}", item.CostPCM)</h2> <br> 
+            </div>
+        </div>
+    }
+</div>
